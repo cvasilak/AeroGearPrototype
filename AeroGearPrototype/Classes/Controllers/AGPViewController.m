@@ -13,6 +13,7 @@
     [[AGPPrototypeAPIClient sharedInstance].tasksPipe read:^(id responseObject) {
         _tasks = responseObject;
         
+        // update table with the newly fetched data
         [self.tableView reloadData];
         
     } failure:^(NSError *error) {
